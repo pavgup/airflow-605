@@ -194,6 +194,8 @@ resource "aws_instance" "web" {
       "sudo sed -i 's/^# en_US.UTF-8 UTF-8$/en_US.UTF-8 UTF-8/g' /etc/locale.gen",
       "sudo locale-gen", 
       "sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8",
+      "sudo wget https://bootstrap.pypa.io/get-pip.py -O /tmp/get-pip.py",
+      "sudo python3 /tmp/get-pip.py",
       "sudo python3 -m pip install -U pip setuptools wheel",
       "sudo pip install Cython",
       "sudo pip install pytz",
